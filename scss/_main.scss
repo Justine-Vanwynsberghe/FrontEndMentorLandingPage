@@ -1,0 +1,164 @@
+@import "_reset";
+
+$font-body: "Open Sans", sans-serif;
+$font-heading: "Poppins", sans-serif;
+$mobileWidth: 375px;
+$desktopWidth: 1440px;
+$violet: #674baf;
+$softMagenta: #e882e8;
+$white: #ffffff;
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body{
+   font-family: $font-body; 
+   color: $white;
+   background-color: $violet;
+   background-image: url(../images/bg-mobile.svg);
+   background-repeat: no-repeat;
+   background-size: 100%;
+
+
+   @media (min-width: 900px) {        
+        background-image: url(../images/bg-desktop.svg);   
+        background-repeat: no-repeat;
+        background-size: 90%;
+        height: 100vh;
+        overflow: hidden;       
+    }   
+   
+   .content{    
+        height: 100vh;
+        padding: 2rem 2rem;  
+
+        header img{            
+            max-width: 10rem; 
+
+            @media (min-width: 900px){
+                max-width: 18rem; 
+                padding-left: 4.6rem;
+            }
+            
+        }
+
+        @media (min-width: 900px) { 
+
+                .grid-container{
+                    display: grid;                
+                    grid-template-columns: 50% 50%; 
+                    padding-top: 3rem; 
+                    gap: 2rem;
+                    padding-inline: 3rem;
+    
+                    .info-section{
+                        text-align: left;  
+  
+                        .info-section-title{
+                            font-size: 3.5rem;
+                            padding-top: 2.5rem;
+                            max-width: 20ch;
+
+                        }
+    
+                        .info-section-text{
+                            font-size: 1.39rem;
+                            max-width: 49ch;
+                        }
+                    }
+                }  
+        }         
+        
+        
+        .illustration-section{
+            padding: 2.5rem 0;
+        }      
+
+        .info-section{
+            text-align: center;
+            padding: 2rem 0;
+
+            .info-section-text{
+                padding: 1rem  0 2rem 0;
+            }
+
+            .btn-register{                
+                font-size: 0.85rem;
+                text-decoration: none;
+                color: $violet;
+                background-color: $white;
+                padding: 0.75rem 5rem;
+                border-radius: 10rem;
+                box-shadow: 1px 5px 15px hsla(0, 0%, 0%, 0.233);
+                &:hover{
+                    background: $softMagenta;
+                    color: $white;
+                }
+
+                @media (min-width: 900px) {  
+                    font-size: 1.25rem;
+                    padding: 0.75rem 3.5rem;
+                }
+                
+            }
+            
+        }
+
+        .social-icons{
+            padding:1rem 0;            
+            text-align: center;
+
+            ul { 
+                padding-left: 0 !important;
+              
+                li {
+                  display: inline-block;
+                  border: 1px solid $white;
+                  margin: 0.2rem; // space between circles
+                  border-radius: 50%;
+                  &:hover{
+                    border-color: $softMagenta;
+                }                 
+                  
+                  a {
+                    color: white;
+                    display: table-cell;
+                    vertical-align: middle; 
+                    text-align: center;
+                    text-decoration: none;
+                    //to control the circle sizes
+                    height: 2rem;
+                    width: 2rem;  
+                    &:hover{
+                        color: $softMagenta;
+                    }                
+                  }
+                }
+            }
+
+            @media (min-width: 900px) {   
+                display: flex;
+                justify-content: flex-end;
+                padding-top: 4rem;
+                font-size: 1.75rem;
+                padding-bottom: 0;
+                padding-top: 0;
+                
+                li{
+                    height: 3rem;
+                    width: 3rem;
+                }
+
+                a{
+                    transform: translate(7px,4px);                    
+                }              
+            }
+           
+        }
+
+    }
+
+}
+
+
+
